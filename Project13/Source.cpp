@@ -6,10 +6,30 @@ void main() {
     srand(time(NULL));
     const int a = 4;
     int mass[a][a];
-    for (int i = 0; i < a; i++) {
-        for (int j = 0; j < a; j++) {
-            mass[i][j] = rand() % 10;
+    int d;
+    cout << "1=manual input 2=auto" << endl;
+    cin >> d;
+    switch (d)
+    {
+    case 1:
+    {
+        for(int i = 0; i < a; i++) {
+            for (int j = 0; j < a; j++) {
+                cout << "Введите графы a[" << i << "][" << j << "] ";
+                cin >> mass[i][j];
+            }
         }
+        break;
+    }
+    case 2:
+    {
+        for (int i = 0; i < a; i++) {
+            for (int j = 0; j < a; j++) {
+                mass[i][j]=rand() % 10;
+            }
+        }
+        break;
+    }
     }
     for (int i = 0; i < a; i++){
         for (int j = 0; j < a; j++){
